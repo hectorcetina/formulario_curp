@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Descripcion de la pagina WEB" />
+    <title>Actividad 1</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="contenedorlogo">
+      <img src="imagenes/logo.png" alt="" />
+    </div>
+    <div class="contenedordatos">
+      <h1>Datos generales del alumno</h1>
+    </div>
+
+    <div class="contenedorforo">
+      <form action="loquesea.html" name="formulariocomentarios" method="get">
+        <p>CURP:</p>
+        <input
+          type="text"
+          name="curp"
+          id="curp"
+          class="campos"
+          required
+          placeholder="CURP"
+        />
+        <button id="btn_enviar" class="boton" type="button">
+          Consultar CURP ☌
+        </button>
+        <p>Nombre*:</p>
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          class="campos"
+          placeholder="Nombres"
+        />
+        <p>Primer apellido*:</p>
+        <input
+          type="text"
+          name="apellido1"
+          id="apellido1"
+          class="campos"
+          placeholder="Primer Apellido"
+        />
+        <p>Segundo Apellido:*</p>
+        <input
+          type="text"
+          name="apellido2"
+          id="apellido2"
+          class="campos"
+          placeholder="Segundo Apellido"
+        />
+        <p>Correo electronico*:</p>
+        <input
+          type="email"
+          name="correo"
+          id="correo"
+          class="campos"
+          placeholder="Correo electronico"
+        />
+        <p>Sexo:</p>
+        <select name="sexo" id="sexo" class="campos">
+          <option value="">Selecciona una opcion</option>
+          <option value="">Masculino</option>
+          <option value="">Femenino</option>
+          <option value="">No definido</option>
+        </select>
+        <p>Fecha de naciemiento:</p>
+        <input type="date" class="campos" id="fecha" />
+        <p>Telefono fijo:*</p>
+        <input
+          type="tel"
+          name="telefono"
+          id="telefono"
+          class="campos"
+          placeholder="Telefono fijo"
+        />
+        <p>Celular:*</p>
+        <input
+          type="tel"
+          name="celular"
+          id="celular"
+          class="campos"
+          placeholder="Celular"
+        />
+        <p>Asunto*:</p>
+        <textarea name="asunto" id="asunto"></textarea>
+        <br />
+        <button id="btn_enviar" class="boton1" type="button">Enviar</button>
+      </form>
+    </div>
+    <div class="footer">
+      <p class="pie_pagina">
+        ERNESTO ALEJANDRO ARANDA CORAL <br />
+        PROGRAMACION WEB <br />
+        7SB
+      </p>
+    </div>
+
+    <script type="text/javascript">
+      $("#btn_enviar").click(function () {
+        // validacion nombre
+        if ($("#nombre").val().trim() == "") {
+          alert("Escribe tu curp ");
+          $("#nombre").focus();
+          return 0;
+        }
+        
+        if ($("#curp").val().trim() == "") {
+          alert("Escribe tu curp ");
+          $("#curp").focus();
+          return 0;
+        }
+        if ($("#apellido1").val().trim() == "") {
+          alert("Escribe tu primer apellido ");
+          $("#apellido1").focus();
+          return 0;
+        }
+        if ($("#apellido2").val().trim() == "") {
+          alert("Escribe tu segundo apellido ");
+          $("#apellido2").focus();
+          return 0;
+        }
+
+        // validacion email
+        if ($("#correo").val().trim() == "") {
+          alert("Escribe correctamente tu correo electronico");
+          $("#correo").focus();
+          return 0;
+        }
+
+        // validacion telefono
+        if ($("#telefono").val().trim() == "") {
+          alert("Escribe tu telefono ");
+          $("#telefono").focus();
+          return 0;
+        }
+        if ($("#celular").val().trim() == "") {
+          alert("Escribe tu celular ");
+          $("#celular").focus();
+          return 0;
+        }
+
+        // validacion fecha
+        if ($("#fecha").val().trim() == "") {
+          alert("Escoge una fecha ");
+          $("#fecha").focus();
+          return 0;
+        }
+
+        // validacion comentarios
+        if ($("#asunto").val().trim() == "") {
+          alert("Escribe tu asunto ");
+          $("#asunto").focus();
+          return 0;
+        }
+
+        document.formulariocomentarios.submit();
+      });
+    </script>
+  </body>
+</html>
